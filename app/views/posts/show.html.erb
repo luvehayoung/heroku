@@ -1,0 +1,21 @@
+<div>
+<span>제목:</span>
+<%= @thisPost.title %>
+</div>
+<div>
+<span>내용:</span>
+<%= @thisPost.content %>
+</div>
+<hr>
+<div>
+    댓글입력
+   <form action='/posts/show/<%=@thisPost.id%>/comments/create' method="post">
+       <input type='text' name='input_comment'>
+       <input type="submit">
+   </form> 
+</div>
+<% @comments.each do |comment| %>
+    <p>-> <%= comment.content %></p>
+<% end %>
+<a href="/edit/<%= @thisPost.id %>">edit post</a>
+<a href="/delete/<%= @thisPost.id %>">delete post</a>

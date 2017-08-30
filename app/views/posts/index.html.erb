@@ -1,0 +1,10 @@
+<h1>FINAL PROJECT</h1>
+
+<% @allPost.each do |p| %>
+<a href="/show/<%= p.id %>"><%= p.title %></a>
+<hr>
+<% end %>
+
+<a href="/new">new post</a>
+
+<a href="/users/sign_out">로그아웃</a>
